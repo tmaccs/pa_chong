@@ -20,4 +20,8 @@ data1 = parse.urlencode(data).encode("utf-8")
 request1 = request.Request(url,data=data1)
 
 response = opener.open(request1)
-print(response.read().decode("utf-8"))
+# print(response.read().decode("utf-8"))
+
+# 第二次可以是get请求，因为第一次访问的cookie被调用
+response_profile = opener.open('http://www.renren.com/880792860/profile')
+print(response_profile.read().decode("utf-8"))
