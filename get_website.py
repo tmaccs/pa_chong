@@ -1,6 +1,7 @@
-import urllib
+import urllib,ssl
 from urllib import request
 
+ssl._create_default_https_context = ssl._create_unverified_context
 def getweb(fullurl,filename):
     """
 
